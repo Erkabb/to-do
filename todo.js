@@ -1,15 +1,11 @@
-// const taskbtn = document.getElementById("taskbtn");
-// const task = document.getElementById("exampleModal");
-
-// taskbtn.addEventListener("click", () => {});
-
+const addtask = document.getElementById("taskbtn");
 const taskTodoList = document.getElementById("taskTodoList");
 const taskInprogressList = document.getElementById("taskInprogressList");
 const taskDoneList = document.getElementById("taskDoneList");
 const taskBlockedList = document.getElementById("taskBlockedList");
-const addtaskbtn = document.getElementById("newtaskbtn");
-const addstatusbtn = document.getElementById("status-name");
-// const taskinput = document.getElementById("newtaskbtn");
+const submitBtn = document.getElementById("submitBtn");
+const input = document.getElementById("recipient-name");
+const statusbtn = document.getElementById("status");
 
 const tasks = [
   {
@@ -33,41 +29,35 @@ const tasks = [
 function draw() {
   taskTodoList.innerHTML = "";
   taskInprogressList.innerHTML = "";
-  taskTodoList.innerHTML = "";
-  taskTodoList.innerHTML = "";
+  taskDoneList.innerHTML = "";
+  taskBlockedList.innerHTML = "";
   for (let i = 0; i < tasks.length; i++) {
-    const newtaskcard = `<div class="d-flex justify-content-between align-items-center text-bg-dark rounded p-2 mt-3 mx-3">
-    
-   
-            <div class="ps-3">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="checklist"
-                aria-label="..."
-              />
-              <label for="todo"></label>
-            </div>
-            <div class="title fs-4 text-secondary ">
-              <span>${tasks[i].name}</span> 
-            </div>
-            <div class="icons d-flex flex-nowrap column-gap-2 ">
-              <i class="fa-solid fa-pencil fa-lg" style="color: #fafafa"></i>
+    const newtaskcard = `
+    <div class="border d-flex justify-content-between align-items-center text-bg-dark rounded p-2 mt-3 mx-3">
+      <span>${tasks[i].name}</span> 
+        <div class="icons ">
+            <button class="btn-sm bg-dark">
+              <i class="fa-solid fa-pencil fa-lg" style="color: #fafafa"></i> </button>
+              <button class="btn-sm bg-dark" onclick="deleteTask()">
               <i
                 class="fa-solid fa-trash-can fa-lg ps-2"
                 style="color: #cb061a"
-              ></i>
+              ></i>${[i]}
+              </button>
             </div>
-         
-    </div>
+            </div>
+       
  `;
+
     switch (tasks[i].status) {
       case "TODO": {
         taskTodoList.innerHTML += newtaskcard;
+
         break;
       }
       case "INPROGRESS": {
         taskInprogressList.innerHTML += newtaskcard;
+
         break;
       }
       case "DONE": {
@@ -83,14 +73,32 @@ function draw() {
     }
   }
 }
-addtaskbtn.addEventListener("click", function () {
+submitBtn.addEventListener("click", function () {
   //   tasks[1].status = "INPROGRESS";
   const newtask = {
-    name: taskinput.value,
-    status: addstatusbtn.status,
+    name: input.value,
+    status: statusbtn.value,
   };
   tasks.push(newtask);
   draw();
 });
 
 draw();
+
+const deleteTask = (tasksIndex) => {
+  tasks.splice(tasksIndex, 1);
+  draw();
+};
+
+// const whiteborder = () => {
+//   taskTodoList.classList.add("border-white");
+// };
+// const yellowborder = () => {
+//   taskInprogressList.classList.add("border-warning");
+// };
+// const greenborder = (green) => {
+//   taskDoneList.classList.add("border-success");
+// };
+// const redborder = (red) => {
+//   taskBlockedList.classList.add("border-danger");
+// };
