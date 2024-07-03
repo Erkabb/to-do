@@ -85,37 +85,69 @@
 
       <div class="d-flex flex-nowrap column-gap-5 justify-content-center pt-4">
         <div class="order-md-4 p-2 bg-black task rounded-5">
-          <div class="bhead fs-4">
-            <i class="fa-solid fa-circle fa-sm" style="color: #f9fafa"></i>
-            <strong>To do</strong>
+          <div
+            class="d-flex flex-row justify-content-between align-items-baseline"
+          >
+            <div class="bhead fs-4">
+              <i class="fa-solid fa-circle fa-sm" style="color: #f9fafa"></i>
+              <strong>To do</strong>
+            </div>
+            <span class="text-white pe-3 fs-3" id="countofList"></span>
           </div>
 
-          <div class="card-body" id="taskTodoList"></div>
+          <div
+            class="card-body border d-flex justify-content-between align-items-center text-bg-dark rounded p-2 mt-3 mx-3"
+            id="taskTodoList"
+          ></div>
         </div>
 
         <div class="order-md-4 p-2 bg-black task rounded-5">
-          <div class="bhead fs-4">
-            <i class="fa-solid fa-circle fa-sm" style="color: #ddec13"></i>
-            <strong>In progress</strong>
+          <div
+            class="d-flex flex-row justify-content-between align-items-baseline"
+          >
+            <div class="bhead fs-4">
+              <i class="fa-solid fa-circle fa-sm" style="color: #ddec13"></i>
+              <strong>In progress</strong>
+            </div>
+            <span class="text-white pe-3 fs-3" id="countofIPList"></span>
           </div>
 
-          <div class="card-body" id="taskInprogressList"></div>
+          <div
+            class="card-body border d-flex justify-content-between align-items-center text-bg-dark rounded p-2 mt-3 mx-3"
+            id="taskInprogressList"
+          ></div>
         </div>
 
         <div class="order-md-4 p-2 bg-black task rounded-5">
-          <div class="bhead fs-4">
-            <i class="fa-solid fa-circle fa-sm" style="color: #04b430"></i>
-            <strong>Done</strong>
+          <div
+            class="d-flex flex-row justify-content-between align-items-baseline"
+          >
+            <div class="bhead fs-4">
+              <i class="fa-solid fa-circle fa-sm" style="color: #04b430"></i>
+              <strong>Done</strong>
+            </div>
+            <span class="text-white pe-3 fs-3" id="countofDoneList"></span>
           </div>
-          <div class="card-body" id="taskDoneList"></div>
+          <div
+            class="card-body border d-flex justify-content-between align-items-center text-bg-dark rounded p-2 mt-3 mx-3"
+            id="taskDoneList"
+          ></div>
         </div>
 
         <div class="order-md-4 p-2 bg-black task rounded-5">
-          <div class="bhead fs-4">
-            <i class="fa-solid fa-circle fa-sm" style="color: #b40404"></i>
-            <strong>Blocked</strong>
+          <div
+            class="d-flex flex-row justify-content-between align-items-baseline"
+          >
+            <div class="bhead fs-4">
+              <i class="fa-solid fa-circle fa-sm" style="color: #b40404"></i>
+              <strong>Blocked</strong>
+            </div>
+            <span class="text-white pe-3 fs-3" id="countofBlockedList"></span>
           </div>
-          <div class="card-body" id="taskBlockedList"></div>
+          <div
+            class="card-body border d-flex justify-content-between align-items-center text-bg-dark rounded p-2 mt-3 mx-3"
+            id="taskBlockedList"
+          ></div>
         </div>
       </div>
     </section>
