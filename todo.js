@@ -44,7 +44,7 @@ function draw() {
   taskBlockedList.innerHTML = "";
   for (let i = 0; i < tasks.length; i++) {
     const newtaskcard = `
-    
+    <div class="d-flex flex-row justify-content-between align-items-center rounded  mt-3 mx-3 ">
       <span>${tasks[i].name}</span> 
         <div class="icons ">
             <button class="btn-sm bg-dark" onclick="editTask(${i})"   data-bs-toggle="modal"
@@ -57,7 +57,7 @@ function draw() {
               ></i>
               </button>
             </div>
-          
+          </div>
        
  `;
 
